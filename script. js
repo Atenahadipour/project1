@@ -1,5 +1,1 @@
-sudo openvpn --confing  VPN-Japan.ovpn
-[sudo] password for ariyana-soft: 
-Options error: Unrecognized option or missing or extra parameter(s) in [CMD-LINE]:1: confing (2.7_rc3)
-Use --help for more information.
-                   
+sudo openvpn --config VPN_Japan.ovpn
