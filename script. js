@@ -41,3 +41,10 @@ Notice: More information about this can be found online at: https://www.kali.org
 ┌──(ariyana-soft㉿kali)-[~]
 curl -fsSL https://archive.kali.org/archive-key.asc | gpg --dearmor | sudo tee /usr/share/keyrings/kali-archive-keyring.gpg > /dev/null
 deb [signed-by=/usr/share/keyrings/kali-archive-keyring.gpg] http://http.kali.org/kali kali-rolling main non-free contrib
+
+ See https://www.kali.org/docs/general-use/kali-linux-sources-list-repositories/
+deb http://http.kali.org/kali kali-rolling main non-free contrib
+
+# Additional line for source packages
+# deb-src http://kali.org/kali kali-rolling main contrib non-free non-free-firmware
+
