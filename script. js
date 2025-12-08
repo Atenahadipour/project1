@@ -3,3 +3,7 @@ https://www.vpngate.net/common/openvpn_download.aspx?sid=2265&udp=1194&filename=
 و
 cd ~/Downloads
 wget -O VPN_Japan.ovpn "https://www.vpngate.net/common/openvpn_download.aspx?sid=2265&udp=1194&filename=VPN_Japan.ovpn"
+ ls
+ code_1.105.1-1760482543_amd64.deb       'com.protonvpn.www(1).flatpakref'   eclipse        eclipse-jee-2025-03-R-linux-gtk-x86_64.tar.gz
+ code-1.105.1-1760482588.el8.x86_64.rpm   com.protonvpn.www.flatpakref      'eclipse (2)'   VPN_Japan.ovpn
+                         
