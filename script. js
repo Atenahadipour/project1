@@ -1,2 +1,3 @@
 sudo apt install ./code.deb
 و
+rm ~/.local/share/applications/eclipse.desktop
