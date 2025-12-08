@@ -1,3 +1,7 @@
 sudo openvpn --config VPN_Japan.ovpn --dev tun
 و
-sudo openvpn --config VPN_Japan.ovpn --dev tun
+sudo openvpn --config VPN_Japan.ovpn --dev tunsudo openvpn --config VPN_Japan.ovpn --dev tun
+Options error: DEPRECATION: No tls-client or tls-server option in configuration detected. OpenVPN 2.8 will remove the functionality to run a VPN without TLS. See the examples section in the manual page for examples of a similar quick setup with peer-fingerprint. OpenVPN 2.7 allows using this configuration when using --allow-deprecated-insecure-static-crypto but you should move to a proper configuration using TLS as soon as possible.
+Use --help for more information.
+               
+
