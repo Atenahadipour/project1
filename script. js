@@ -2,3 +2,9 @@ wget -O code.deb https://code.visualstudio.com/sha/download?build=stable&os=linu
 sudo dpkg -i code.deb
 sudo apt -f install
 sudo apt install code -y
+Package code is not available, but is referred to by another package.
+This may mean that the package is missing, has been obsoleted, or
+is only available from another source
+
+Error: Package 'code' has no installation candidate
+                  
