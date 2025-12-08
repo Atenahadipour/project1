@@ -21,3 +21,4 @@ Notice: See apt-secure(8) manpage for repository creation and user configuration
 Notice: Repository 'Kali Linux' changed its 'firmware component' value from 'non-free' to 'non-free-firmware'
 Notice: More information about this can be found online at: https://www.kali.org/blog/non-free-firmware-transition/
                                              
+deb http://http.kali.org/kali kali-rolling main non-free contrib
