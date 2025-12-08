@@ -9,3 +9,14 @@ echo "deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft.gpg] https://packa
 | sudo tee /etc/apt/sources.list.d/vscode.list
 و
 wget -O code.deb https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64
+ariyana-soft㉿kali)-[~]
+└─$ wget -O code.deb https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64
+[1] 138557
+                                                                                                                                                           
+┌──(ariyana-soft㉿kali)-[~]
+└─$ 
+Redirecting output to ‘wget-log.1’.
+
+[1]  + exit 8     wget -O code.deb https://code.visualstudio.com/sha/download?build=stable
+┌──(ariyana-soft㉿kali)-[~]
+└─$ 
