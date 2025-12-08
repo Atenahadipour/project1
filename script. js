@@ -8,3 +8,17 @@ is only available from another source
 
 Error: Package 'code' has no installation candidate
                   
+[1] 24776
+
+Redirecting output to ‘wget-log’.
+                                 dpkg-deb: error: unexpected end of file in archive magic version number in code.deb
+dpkg: error processing archive code.deb (--install):
+ dpkg-deb --control subprocess returned error exit status 2
+Errors were encountered while processing:
+ code.deb
+                                                                                                                                                           
+┌──(ariyana-soft㉿kali)-[~]
+└─$ 
+[1]  + exit 8     wget -O code.deb https://code.visualstudio.com/sha/download?build=stable
+┌──(ariyana-soft㉿kali)-[~]
+└─$ 
