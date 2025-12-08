@@ -1,3 +1,25 @@
-sudo apt install ./code.deb
-و
-rm ~/.local/share/applications/eclipse.desktop
+sudo apt install openvpn -y    
+[sudo] password for ariyana-soft: 
+openvpn is already the newest version (2.7.0~rc3-1).
+The following packages were automatically installed and are no longer required:
+  amass-common              libgeos3.13.0                libnet1              libwiretap15                          python3-packaging-whl
+  firebird3.0-common        libgl1-mesa-dev              libpaper1            libwsutil16                           python3-poetry-dynamic-versioning
+  firebird3.0-common-doc    libglapi-mesa                libplacebo349        libx264-164                           python3-protobuf
+  firmware-ti-connectivity  libgles-dev                  libradare2-5.0.0t64  openjdk-23-jre                        python3-pysmi
+  icu-devtools              libgles1                     librav1e0.7          openjdk-23-jre-headless               python3-requests-ntlm
+  libabsl20230802           libglvnd-core-dev            libsframe1           python3-appdirs                       python3-tomlkit
+  libbfio1                  libglvnd-dev                 libsigsegv2          python3-bluepy                        python3-wheel-whl
+  libbson-1.0-0t64          libgtksourceview-3.0-1       libsqlcipher1        python3-click-plugins                 python3-zombie-imp
+  libc++1-19                libgtksourceview-3.0-common  libtag1v5            python3-dunamai                       ruby-zeitwerk
+  libc++abi1-19             libgtksourceviewmm-3.0-0v5   libtag1v5-vanilla    python3-kismetcapturebtgeiger         ruby3.1
+  libcapstone4              libgumbo2                    libtagc0             python3-kismetcapturefreaklabszigbee  ruby3.1-dev
+  libconfig++9v5            libicu-dev                   libtheora0           python3-kismetcapturertl433           ruby3.1-doc
+  libconfig9                libinstpatch-1.0-2           libunwind-19         python3-kismetcapturertladsb
+  libegl-dev                libjxl0.9                    libutempter0         python3-kismetcapturertlamr
+  libflac12t64              libmbedcrypto7t64            libvpx9              python3-nfsclient
+  libfmt9                   libmongoc-1.0-0t64           libwireshark18       python3-ntlm-auth
+Use 'sudo apt autoremove' to remove them.
+
+Summary:
+  Upgrading: 0, Installing: 0, Removing: 0, Not Upgrading: 220
+                                                               
