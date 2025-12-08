@@ -48,3 +48,14 @@ deb http://http.kali.org/kali kali-rolling main non-free contrib
 # Additional line for source packages
 # deb-src http://kali.org/kali kali-rolling main contrib non-free non-free-firmware
 
+# Kali Rolling Repository
+deb [signed-by=/usr/share/keyrings/kali-archive-keyring.gpg] http://http.kali.org/kali kali-rolling main non-free contrib
+
+# Source packages (optional)
+# deb-src [signed-by=/usr/share/keyrings/kali-archive-keyring.gpg] http://http.kali.org/kali kali-rolling main contrib non-free non-free-firmware
+ب
+# Kali Rolling Repository
+deb [signed-by=/usr/share/keyrings/kali-archive-keyring.gpg] http://http.kali.org/kali kali-rolling main non-free contrib
+
+# Source packages (optional)
+# deb-src [signed-by=/usr/share/keyrings/kali-archive-keyring.gpg] http://http.kali.org/kali kali-rolling main contrib non-free non-free-firmware
