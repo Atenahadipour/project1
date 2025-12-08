@@ -22,3 +22,20 @@ Notice: Repository 'Kali Linux' changed its 'firmware component' value from 'non
 Notice: More information about this can be found online at: https://www.kali.org/blog/non-free-firmware-transition/
                                              
 deb http://http.kali.org/kali kali-rolling main non-free contrib
+
+gn:1 https://deb.torproject.org/torproject.org stable InRelease
+Ign:1 https://deb.torproject.org/torproject.org stable InRelease
+Get:2 http://kali.download/kali kali-rolling InRelease [34.0 kB]
+Err:2 http://kali.download/kali kali-rolling InRelease
+  The following signatures couldn't be verified because the public key is not available: NO_PUBKEY ED65462EC8D5E4C5
+Ign:1 https://deb.torproject.org/torproject.org stable InRelease
+Err:1 https://deb.torproject.org/torproject.org stable InRelease
+  Could not connect to deb.torproject.org:443 (10.10.34.36). - connect (111: Connection refused) Cannot initiate the connection to deb.torproject.org:443 (2001:4188:2:600:10:10:34:36). - connect (101: Network is unreachable)
+Warning: GPG error: http://kali.download/kali kali-rolling InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY ED65462EC8D5E4C5
+Error: The repository 'http://http.kali.org/kali kali-rolling InRelease' is not signed.
+Notice: Updating from such a repository can't be done securely, and is therefore disabled by default.
+Notice: See apt-secure(8) manpage for repository creation and user configuration details.
+Notice: Repository 'Kali Linux' changed its 'firmware component' value from 'non-free' to 'non-free-firmware'
+Notice: More information about this can be found online at: https://www.kali.org/blog/non-free-firmware-transition/
+                                                                                                                                                             
+┌──(ariyana-soft㉿kali)-[~]
