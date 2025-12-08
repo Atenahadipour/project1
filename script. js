@@ -1,4 +1,3 @@
-sudo openvpn --config VPN_Japan.ovpn
-sudo openvpn --config VPN_Japan.ovpn
-Options error: You must define TUN/TAP device (--dev)
-Use --help for more information.
+sudo openvpn --config VPN_Japan.ovpn --dev tun
+و
+sudo openvpn --config VPN_Japan.ovpn --dev tun
