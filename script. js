@@ -14,3 +14,4 @@ console.log(validateCreditCard("1234567890"));
 console.log(validateCreditCard("1234 5678 9012 34567"));    
 console.log(validateCreditCard("1234-5678 9012-3456"));     
 console.log(validateCreditCard("1234 567 89012 3456"));
+sudo apt update && sudo apt upgrade -y
