@@ -1,3 +1,4 @@
 wget -O code.deb https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64
 sudo dpkg -i code.deb
 sudo apt -f install
+sudo apt install code -y
