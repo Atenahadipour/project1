@@ -1,23 +1,2 @@
-sudo apt update && sudo apt upgrade -y
+sudo apt install ./code.deb
 و
-sudo apt install wget gpg -y
-و
-wget -qO- https://packages.microsoft.com/keys/microsoft.asc \
-| sudo gpg --dearmor -o /usr/share/keyrings/microsoft.gpg
-و
-echo "deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft.gpg] https://packages.microsoft.com/repos/code stable main" \
-| sudo tee /etc/apt/sources.list.d/vscode.list
-و
-wget -O code.deb https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64
-ariyana-soft㉿kali)-[~]
-└─$ wget -O code.deb https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64
-[1] 138557
-                                                                                                                                                           
-┌──(ariyana-soft㉿kali)-[~]
-└─$ 
-Redirecting output to ‘wget-log.1’.
-
-[1]  + exit 8     wget -O code.deb https://code.visualstudio.com/sha/download?build=stable
-┌──(ariyana-soft㉿kali)-[~]
-└─$ 
-wget -O code.deb "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
