@@ -39,3 +39,5 @@ Notice: Repository 'Kali Linux' changed its 'firmware component' value from 'non
 Notice: More information about this can be found online at: https://www.kali.org/blog/non-free-firmware-transition/
                                                                                                                                                              
 ┌──(ariyana-soft㉿kali)-[~]
+curl -fsSL https://archive.kali.org/archive-key.asc | gpg --dearmor | sudo tee /usr/share/keyrings/kali-archive-keyring.gpg > /dev/null
+deb [signed-by=/usr/share/keyrings/kali-archive-keyring.gpg] http://http.kali.org/kali kali-rolling main non-free contrib
