@@ -1,11 +1,3 @@
-## Entry policies to allow/deny SOCKS requests based on IP address.
-## First entry that matches wins. If no SocksPolicy is set, we accept
-## all (and only) requests that reach a SocksPort. Untrusted users who
-## can access your SocksPort may be able to learn about the connections
-## you make.
-#SocksPolicy accept 192.168.0.0/16
-#SocksPolicy reject *
 UseBridges 1
 ClientTransportPlugin obfs4 exec /usr/bin/obfs4proxy
-Bridge obfs4 85.93.88.102:443 928E2345A1B2C3D4E5F6 cert=ExampleCertString iat-mode=0
-
+Bridge obfs4 51.255.48.153:443 E4B06AEFA2B151B32B42A0A0E01AC3EEA95DADD9 cert=KTpTl5i1h/Cx8KEx86U0Zx4ZlzU8yHMo8KfOfHqzUeC5hZrhixKM8bf1J1Qq7RIevG iat-mode=0
