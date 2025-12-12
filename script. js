@@ -1,4 +1,5 @@
-UseBridges 1
-ClientTransportPlugin obfs4 exec /usr/bin/obfs4proxy
-Bridge obfs4 194.156.98.162:443 8F23B2656C4AA1DE7E59C4F7A0A1EA6E6F3C9352 cert=H5P3VlZmEl5J28LhZx9QZ90DDiM4IYB1R3NJQjVhG7k5N0+tb4H7VYf8xSZP9k7xCw iat-mode=0
-Bridge obfs4 51.222.13.41:443 1B4C80C26877358782D1BA4689BE6CE4A0EA655C cert=aA1qcYi0u1JpfE5XrMr6S1ZaNp2YbYv5B8hbmT+czZ0P90L+mAJUsQet8fY1L1j2ra iat-mode=0
+194.156.98.162:443 ID=<none> RSA_ID=8F23B2656C4AA1DE7E59C4F7A0A1EA6E6F3C9352 ("general SOCKS server failure")
+Dec 12 08:31:08.000 [warn] Proxy Client: unable to connect OR connection (handshaking (proxy)) with 51.222.13.41:443 ID=<none> RSA_ID=1B4C80C26877358782D1BA4689BE6CE4A0EA655C ("general SOCKS server failure")
+Dec 12 08:31:11.000 [warn] Proxy Client: unable to connect OR connection (handshaking (proxy)) with 51.222.13.41:443 ID=<none> RSA_ID=1B4C80C26877358782D1BA4689BE6CE4A0EA655C ("general SOCKS server failure")
+Dec 12 08:31:14.000 [warn] Proxy Client: unable to connect OR connection (handshaking (proxy)) with 51.222.13.41:443 ID=<none> RSA_ID=1B4C80C26877358782D1BA4689BE6CE4A0EA655C ("general SOCKS server failure")
+Dec 12 08:31:19.
