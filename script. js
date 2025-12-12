@@ -1,1 +1,1 @@
-sudo apt update && sudo apt install -y curl wget tar
+wget https://www.torproject.org/dist/torbrowser/13.5.2/tor-browser-linux64-13.5.2_ALL.tar.xz
