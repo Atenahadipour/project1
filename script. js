@@ -1,1 +1,11 @@
-sudo openvpn --config ~/Downloads/vpngate_public-vpn-137.opengw.net_tcp_443.ovpn
+$ sudo openvpn --config ~/Downloads/vpngate_public-vpn-137.opengw.net_tcp_443.ovpn
+2025-12-12 09:51:15 DEPRECATED: --persist-key option ignored. Keys are now always persisted across restarts. 
+2025-12-12 09:51:15 DEPRECATED OPTION: --cipher set to 'AES-128-CBC' but missing in --data-ciphers (DEFAULT). OpenVPN ignores --cipher for cipher negotiations. 
+2025-12-12 09:51:15 OpenVPN 2.7_rc3 x86_64-pc-linux-gnu [SSL (OpenSSL)] [LZO] [LZ4] [EPOLL] [PKCS11] [MH/PKTINFO] [AEAD] [DCO]
+2025-12-12 09:51:15 library versions: OpenSSL 3.5.4 30 Sep 2025, LZO 2.10
+2025-12-12 09:51:15 DCO version: 6.16.8+kali-amd64 #1 SMP PREEMPT_DYNAMIC Kali 6.16.8-1kali1 (2025-09-24)
+2025-12-12 09:51:15 WARNING: No server certificate verification method has been enabled.  See http://openvpn.net/howto.html#mitm for more info.
+2025-12-12 09:51:17 TCP/UDP: Preserving recently used remote address: [AF_INET]219.100.37.116:443
+2025-12-12 09:51:17 Socket Buffers: R=[131072->131072] S=[16384->16384]
+2025-12-12 09:51:17 Attempting to establish TCP connection with [AF_INET]219.100.37.116:443
+
