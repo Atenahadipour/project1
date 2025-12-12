@@ -1,1 +1,3 @@
-sudo apt update && sudo apt install -y obfs4proxy
+UseBridges 1
+ClientTransportPlugin obfs4 exec /usr/bin/obfs4proxy
+Bridge obfs4 85.93.88.102:443 928E2345A1B2C3D4E5F6 cert=ExampleCertString iat-mode=0
