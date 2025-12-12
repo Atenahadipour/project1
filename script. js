@@ -1,5 +1,1 @@
-194.156.98.162:443 ID=<none> RSA_ID=8F23B2656C4AA1DE7E59C4F7A0A1EA6E6F3C9352 ("general SOCKS server failure")
-Dec 12 08:31:08.000 [warn] Proxy Client: unable to connect OR connection (handshaking (proxy)) with 51.222.13.41:443 ID=<none> RSA_ID=1B4C80C26877358782D1BA4689BE6CE4A0EA655C ("general SOCKS server failure")
-Dec 12 08:31:11.000 [warn] Proxy Client: unable to connect OR connection (handshaking (proxy)) with 51.222.13.41:443 ID=<none> RSA_ID=1B4C80C26877358782D1BA4689BE6CE4A0EA655C ("general SOCKS server failure")
-Dec 12 08:31:14.000 [warn] Proxy Client: unable to connect OR connection (handshaking (proxy)) with 51.222.13.41:443 ID=<none> RSA_ID=1B4C80C26877358782D1BA4689BE6CE4A0EA655C ("general SOCKS server failure")
-Dec 12 08:31:19.
+sudo apt install network-manager-openvpn network-manager-openvpn-gnome
