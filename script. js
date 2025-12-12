@@ -1,1 +1,1 @@
-sudo openvpn --config ~/Downloads/myvpn.ovpn
+sudo openvpn --config ~/Downloads/vpngate_public-vpn-137.opengw.net_tcp_443.ovpn
