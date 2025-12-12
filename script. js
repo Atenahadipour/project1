@@ -1,1 +1,14 @@
-torbrowser-launcher
+Tor Browser Launcher
+By Micah Lee & Tor Project, licensed under MIT
+version 0.3.7
+https://gitlab.torproject.org/tpo/applications/torbrowser-launcher/
+Creating GnuPG homedir /home/ariyana-soft/.local/share/torbrowser/gnupg_homedir
+Downloading Tor Browser for the first time.
+Downloading https://aus1.torproject.org/torbrowser/update_3/release/Linux_x86_64-gcc3/x/ALL
+Error starting download:
+
+https://aus1.torproject.org/torbrowser/update_3/release/Linux_x86_64-gcc3/x/ALL
+
+Are you connected to the internet?
+
+
