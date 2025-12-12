@@ -1,1 +1,13 @@
-sudo systemctl restart tor
+ systemctl status tor      
+● tor.service - Anonymizing overlay network for TCP (multi-instance-master)
+     Loaded: loaded (/usr/lib/systemd/system/tor.service; disabled; preset: disabled)
+     Active: active (exited) since Fri 2025-12-12 07:48:10 EST; 36s ago
+ Invocation: 7b3341d9f032450d9ac69e413f1a26e1
+    Process: 3673 ExecStart=/bin/true (code=exited, status=0/SUCCESS)
+   Main PID: 3673 (code=exited, status=0/SUCCESS)
+   Mem peak: 2.2M
+        CPU: 11ms
+
+Dec 12 07:48:10 kali systemd[1]: Starting tor.service - Anonymizing overlay network for TCP (multi-instance-master)...
+Dec 12 07:48:10 kali systemd[1]: Finished tor.service - Anonymizing overlay network for TCP (multi-instance-master).
+                           
