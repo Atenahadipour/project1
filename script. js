@@ -1,1 +1,13 @@
-tar -xvf tor-browser-linux64-13.5.2_ALL.tar.xz
+wget https://www.torproject.org/dist/torbrowser/13.5.2/tor-browser-linux64-13.5.2_ALL.tar.xz
+--2025-12-12 07:27:15--  https://www.torproject.org/dist/torbrowser/13.5.2/tor-browser-linux64-13.5.2_ALL.tar.xz
+Resolving www.torproject.org (www.torproject.org)... 10.10.34.36, 2001:4188:2:600:10:10:34:36
+Connecting to www.torproject.org (www.torproject.org)|10.10.34.36|:443... failed: Connection refused.
+Connecting to www.torproject.org (www.torproject.org)|2001:4188:2:600:10:10:34:36|:443... failed: Network is unreachable.
+                                                                                                                                                             
+┌──(ariyana-soft㉿kali)-[~]
+└─$ tar -xvf tor-browser-linux64-13.5.2_ALL.tar.xz
+tar: tor-browser-linux64-13.5.2_ALL.tar.xz: Cannot open: No such file or directory
+tar: Error is not recoverable: exiting now
+                                                                                                                                                             
+┌──(ariyana-soft㉿kali)-[~]
+
