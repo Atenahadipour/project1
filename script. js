@@ -1,4 +1,6 @@
 ─(ariyana-soft㉿kali)-[~]
 └─$ echo "deb https://repo.protonvpn.com/debian stable main" | sudo tee /etc/apt/sources.list.d/protonvpn.list
 deb https://repo.protonvpn.com/debian stable main
+و
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 8E432EFC
                  
