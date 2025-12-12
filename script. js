@@ -1,5 +1,9 @@
- 09:53:19 WARNING: No server certificate verification method has been enabled.  See http://openvpn.net/howto.html#mitm for more info.
-2025-12-12 09:53:20 TCP/UDP: Preserving recently used remote address: [AF_INET]219.100.37.116:443
-2025-12-12 09:53:20 Socket Buffers: R=[131072->131072] S=[16384->16384]
-2025-12-12 09:53:20 Attempting to establish TCP connection with [AF_INET]219.100.37.116:443
-
+$ nmcli device
+DEVICE         TYPE      STATE                   CONNECTION         
+usb0           ethernet  connected               Wired connection 1 
+wlan0          wifi      connected               Galaxy A35 5G 92A5 
+lo             loopback  connected (externally)  lo                 
+p2p-dev-wlan0  wifi-p2p  disconnected            --                 
+                                                                                                                                                 
+┌──(ariyana-soft㉿kali)-[~]
+└─$ 
