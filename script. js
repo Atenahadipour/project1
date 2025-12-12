@@ -1,3 +1,1 @@
-UseBridges 1
-ClientTransportPlugin obfs4 exec /usr/bin/obfs4proxy
-Bridge obfs4 141.95.17.31:443 81E08521F8A1146569FBC34E37C04E22D4547931 cert=JvyndnY8QcRbVLuWmPZ iat-mode=0
+sudo systemctl restart tor
