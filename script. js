@@ -1,1 +1,1 @@
-sudo apt install network-manager-openvpn network-manager-openvpn-gnome
+sudo openvpn --config ~/Downloads/myvpn.ovpn
