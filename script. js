@@ -1,36 +1,3 @@
-
-
-# Configuration file for a typical Tor user
-## Last updated 9 October 2013 for Tor 0.2.5.2-alpha.
-## (may or may not work for much older or much newer versions of Tor.)
-##
-## Lines that begin with "## " try to explain what's going on. Lines
-## that begin with just "#" are disabled commands: you can enable them
-## by removing the "#" symbol.
-##
-## See 'man tor', or https://www.torproject.org/docs/tor-manual.html,
-## for more options you can use in this file.
-##
-## Tor will look for this file in various places based on your platform:
-## https://www.torproject.org/docs/faq#torrc
-
-## Tor opens a socks proxy on port 9050 by default -- even if you don't
-## configure one below. Set "SocksPort 0" if you plan to run Tor only
-## as a relay, and not make any local application connections yourself.
-#SocksPort 9050 # Default: Bind to localhost:9050 for local connections.
-#SocksPort 192.168.0.1:9100 # Bind to this address:port too.
-
-## Entry policies to allow/deny SOCKS requests based on IP address.
-## First entry that matches wins. If no SocksPolicy is set, we accept
-## all (and only) requests that reach a SocksPort. Untrusted users who
-## can access your SocksPort may be able to learn about the connections
-## you make.
-#SocksPolicy accept 192.168.0.0/16
-#SocksPolicy reject *
-
-## Logs go to stdout at level "notice" unless redirected by something
-## else, like one of the below lines. You can have as many Log lines as
-## you want.
-##
-## We advise using "notice" in most cases, since anything more verbose
-                                             
+UseBridges 1
+ClientTransportPlugin obfs4 exec /usr/bin/obfs4proxy
+Bridge obfs4 141.95.17.31:443 81E08521F8A1146569FBC34E37C04E22D4547931 cert=JvyndnY8QcRbVLuWmPZ iat-mode=0
