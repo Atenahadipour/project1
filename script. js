@@ -1,4 +1,1 @@
-(ariyana-soft㉿kali)-[~]
-└─$ curl -fsSL https://repo.protonvpn.com/debian/public_key.asc | sudo tee /etc/apt/trusted.gpg.d/protonvpn.asc
-curl: (7) Failed to connect to repo.protonvpn.com port 443 after 31 ms: Could not connect to server
-         
+sudo apt update && sudo apt install -y tor torbrowser-launcher
