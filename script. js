@@ -1,3 +1,15 @@
-UseBridges 1
-ClientTransportPlugin obfs4 exec /usr/bin/obfs4proxy
-Bridge obfs4 51.255.48.153:443 E4B06AEFA2B151B32B42A0A0E01AC3EEA95DADD9 cert=KTpTl5i1h/Cx8KEx86U0Zx4ZlzU8yHMo8KfOfHqzUeC5hZrhixKM8bf1J1Qq7RIevG iat-mode=0
+Dec 12 08:24:43.000 [warn] Proxy Client: unable to connect OR connection (handshaking (proxy)) with 51.255.48.153:443 ID=<none> RSA_ID=E4B06AEFA2B151B32B42A0A0E01AC3EEA95DADD9 ("general SOCKS server failure")
+Dec 12 08:24:44.000 [warn] Proxy Client: unable to connect OR connection (handshaking (proxy)) with 51.255.48.153:443 ID=<none> RSA_ID=E4B06AEFA2B151B32B42A0A0E01AC3EEA95DADD9 ("general SOCKS server failure")
+Dec 12 08:24:46.000 [warn] Proxy Client: unable to connect OR connection (handshaking (proxy)) with 51.255.48.153:443 ID=<none> RSA_ID=E4B06AEFA2B151B32B42A0A0E01AC3EEA95DADD9 ("general SOCKS server failure")
+Dec 12 08:24:47.000 [warn] Proxy Client: unable to connect OR connection (handshaking (proxy)) with 51.255.48.153:443 ID=<none> RSA_ID=E4B06AEFA2B151B32B42A0A0E01AC3EEA95DADD9 ("general SOCKS server failure")
+Dec 12 08:24:48.000 [warn] Proxy Client: unable to connect OR connection (handshaking (proxy)) with 51.255.48.153:443 ID=<none> RSA_ID=E4B06AEFA2B151B32B42A0A0E01AC3EEA95DADD9 ("general SOCKS server failure")
+Dec 12 08:24:49.000 [warn] Proxy Client: unable to connect OR connection (handshaking (proxy)) with 51.255.48.153:443 ID=<none> RSA_ID=E4B06AEFA2B151B32B42A0A0E01AC3EEA95DADD9 ("general SOCKS server failure")
+Dec 12 08:24:50.000 [warn] Proxy Client: unable to connect OR connection (handshaking (proxy)) with 51.255.48.153:443 ID=<none> RSA_ID=E4B06AEFA2B151B32B42A0A0E01AC3EEA95DADD9 ("general SOCKS server failure")
+Dec 12 08:24:52.000 [warn] Proxy Client: unable to connect OR connection (handshaking (proxy)) with 51.255.48.153:443 ID=<none> RSA_ID=E4B06AEFA2B151B32B42A0A0E01AC3EEA95DADD9 ("general SOCKS server failure")
+Dec 12 08:24:55.000 [warn] Proxy Client: unable to connect OR connection (handshaking (proxy)) with 51.255.48.153:443 ID=<none> RSA_ID=E4B06AEFA2B151B32B42A0A0E01AC3EEA95DADD9 ("general SOCKS server failure")
+Dec 12 08:25:00.000 [warn] Proxy Client: unable to connect OR connection (handshaking (proxy)) with 51.255.48.153:443 ID=<none> RSA_ID=E4B06AEFA2B151B32B42A0A0E01AC3EEA95DADD9 ("general SOCKS server failure")
+Dec 12 08:25:04.000 [warn] Proxy Client: unable to connect OR connection (handshaking (proxy)) with 51.255.48.153:443 ID=<none> RSA_ID=E4B06AEFA2B151B32B42A0A0E01AC3EEA95DADD9 ("general SOCKS server failure")
+Dec 12 08:25:14.000 [warn] Proxy Client: unable to connect OR connection (handshaking (proxy)) with 51.255.48.153:443 ID=<none> RSA_ID=E4B06AEFA2B151B32B42A0A0E01AC3EEA95DADD9 ("general SOCKS server failure")
+Dec 12 08:25:18.000 [warn] Proxy Client: unable to connect OR connection (handshaking (proxy)) with 51.255.48.153:443 ID=<none> RSA_ID=E4B06AEFA2B151B32B42A0A0E01AC3EEA95DADD9 ("general SOCKS server failure")
+Dec 12 08:25:24.000 [warn] Proxy Client: unable to connect OR connection (handshaking (proxy)) with 51.255.48.153:443 ID=<none> RSA_ID=E4B06AEFA2B151B32B42A0A0E01AC3EEA95DADD9 ("general SOCKS server failure")
+
