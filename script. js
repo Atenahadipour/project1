@@ -1,8 +1,3 @@
-─(ariyana-soft㉿kali)-[~]
-└─$ tor -f /etc/tor/torrc
-Dec 12 08:11:17.401 [notice] Tor 0.4.8.16 running on Linux with Libevent 2.1.12-stable, OpenSSL 3.5.4, Zlib 1.3.1, Liblzma 5.8.1, Libzstd 1.5.6 and Glibc 2.41 as libc.
-Dec 12 08:11:17.401 [notice] Tor can't help you if you use it wrong! Learn how to be safe at https://support.torproject.org/faq/staying-anonymous/
-Dec 12 08:11:17.401 [notice] Read configuration file "/etc/tor/torrc".
-Dec 12 08:11:17.402 [warn] Failed to parse/validate config: Unknown option 'dge'.  Failing.
-Dec 12 08:11:17.402 [err] Reading config failed--see warnings above.
-                           
+UseBridges 1
+ClientTransportPlugin obfs4 exec /usr/bin/obfs4proxy
+Bridge obfs4 51.255.48.153:443 E4B06AEFA2B151B32B42A0A0E01AC3EEA95DADD9 cert=KTpTl5i1h/Cx8KEx86U0Zx4ZlzU8yHMo8KfOfHqzUeC5hZrhixKM8bf1J1Qq7RIevG iat-mode=0
