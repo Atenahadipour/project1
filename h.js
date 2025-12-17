@@ -1,1 +1,1 @@
-ls -l /usr/bin/snowflake-client
+sudo journalctl -u tor@default -n 50 --no-pager
