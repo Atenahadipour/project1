@@ -1,9 +1,3 @@
-$ nmcli device
-DEVICE         TYPE      STATE                   CONNECTION         
-usb0           ethernet  connected               Wired connection 1 
-wlan0          wifi      connected               Galaxy A35 5G 92A5 
-lo             loopback  connected (externally)  lo                 
-p2p-dev-wlan0  wifi-p2p  disconnected            --                 
-                                                                                                                                                 
-┌──(ariyana-soft㉿kali)-[~]
-└─$ 
+UseBridges 1
+ClientTransportPlugin snowflake exec /usr/bin/snowflake-client
+Bridge snowflake 192.0.2.3:1
