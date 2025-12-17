@@ -1,1 +1,1 @@
-ls -l /usr/bin/snowflake-client
+sudo apt install snowflake-client
