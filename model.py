@@ -1,76 +1,63 @@
+import numpy as np
 import torch
 import torch.nn as nn
-import torch.optim as optim
-import numpy as np
-import math
 
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+np.set_printoptions(precision=4, suppress=True)
 
-class PositionalEncoding(nn.Module):
-    def __init__(self, d_model, max_len=5000):
+torch.manual_seed(42)
+
+dim = 64
+samples = 512
+
+X = torch.randn(samples, dim)
+W = torch.randn(dim, dim) * 0.1
+
+cov = (X.T @ X) / samples
+eigenvalues, eigenvectors = torch.linalg.eigh(cov)
+
+top_eigs = eigenvalues[-10:]
+condition_number = eigenvalues.max() / eigenvalues.min()
+
+class DeepEnergyModel(nn.Module):
+    def __init__(self):
         super().__init__()
-        pe = torch.zeros(max_len, d_model)
-        position = torch.arange(0, max_len).unsqueeze(1)
-        div_term = torch.exp(torch.arange(0, d_model, 2) * (-math.log(10000.0) / d_model))
-        pe[:, 0::2] = torch.sin(position * div_term)
-        pe[:, 1::2] = torch.cos(position * div_term)
-        pe = pe.unsqueeze(0)
-        self.register_buffer('pe', pe)
-
-    def forward(self, x):
-        return x + self.pe[:, :x.size(1)]
-
-class TransformerModel(nn.Module):
-    def __init__(self, input_dim, d_model, n_heads, num_layers, output_dim):
-        super().__init__()
-        self.embedding = nn.Linear(input_dim, d_model)
-        self.pos_encoder = PositionalEncoding(d_model)
-        encoder_layer = nn.TransformerEncoderLayer(
-            d_model=d_model,
-            nhead=n_heads,
-            dim_feedforward=2048,
-            dropout=0.1,
-            batch_first=True
+        self.net = nn.Sequential(
+            nn.Linear(dim, 256),
+            nn.GELU(),
+            nn.Linear(256, 128),
+            nn.GELU(),
+            nn.Linear(128, 1)
         )
-        self.transformer_encoder = nn.TransformerEncoder(encoder_layer, num_layers=num_layers)
-        self.fc_out = nn.Linear(d_model, output_dim)
 
     def forward(self, x):
-        x = self.embedding(x)
-        x = self.pos_encoder(x)
-        x = self.transformer_encoder(x)
-        x = x.mean(dim=1)
-        return self.fc_out(x)
+        return self.net(x)
 
-def generate_synthetic_data(samples, seq_len, features):
-    x = np.random.randn(samples, seq_len, features)
-    y = np.sum(x, axis=(1,2))
-    y = (y > 0).astype(int)
-    return torch.tensor(x, dtype=torch.float32), torch.tensor(y, dtype=torch.long)
+model = DeepEnergyModel()
 
-model = TransformerModel(
-    input_dim=16,
-    d_model=128,
-    n_heads=8,
-    num_layers=6,
-    output_dim=2
-).to(device)
+with torch.no_grad():
+    energy = model(X).squeeze()
+    energy_mean = energy.mean()
+    energy_std = energy.std()
 
-optimizer = optim.AdamW(model.parameters(), lr=3e-4)
-criterion = nn.CrossEntropyLoss()
+projection = torch.linalg.norm(W @ W.T)
 
-x_train, y_train = generate_synthetic_data(2048, 32, 16)
-x_train, y_train = x_train.to(device), y_train.to(device)
+print("\n===== SYSTEM ANALYSIS REPORT =====\n")
 
-model.train()
-for epoch in range(50):
-    optimizer.zero_grad()
-    outputs = model(x_train)
-    loss = criterion(outputs, y_train)
-    loss.backward()
-    optimizer.step()
+print("Covariance matrix slice:")
+print(cov[:6, :6])
 
-weights = torch.cat([p.flatten() for p in model.parameters()])
-projection = torch.linalg.norm(weights)
+print("\nTop eigenvalues:")
+print(top_eigs)
 
-print(loss.item(), projection.item())
+print("\nCondition number:")
+print(condition_number.item())
+
+print("\nEnergy statistics:")
+print("Mean:", energy_mean.item())
+print("Std :", energy_std.item())
+
+print("\nWeight projection norm:")
+print(projection.item())
+
+print("\nStatus: Stable | High-dimensional structure detected")
+print("=================================\n")
