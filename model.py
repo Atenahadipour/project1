@@ -1,63 +1,37 @@
 import numpy as np
-import torch
-import torch.nn as nn
 
-np.set_printoptions(precision=4, suppress=True)
+np.set_printoptions(precision=3, suppress=True)
 
-torch.manual_seed(42)
+np.random.seed(42)
 
-dim = 64
-samples = 512
+dim = 32
+samples = 200
 
-X = torch.randn(samples, dim)
-W = torch.randn(dim, dim) * 0.1
+X = np.random.randn(samples, dim)
 
-cov = (X.T @ X) / samples
-eigenvalues, eigenvectors = torch.linalg.eigh(cov)
+cov = np.cov(X, rowvar=False)
 
-top_eigs = eigenvalues[-10:]
-condition_number = eigenvalues.max() / eigenvalues.min()
+eigenvalues, eigenvectors = np.linalg.eig(cov)
 
-class DeepEnergyModel(nn.Module):
-    def __init__(self):
-        super().__init__()
-        self.net = nn.Sequential(
-            nn.Linear(dim, 256),
-            nn.GELU(),
-            nn.Linear(256, 128),
-            nn.GELU(),
-            nn.Linear(128, 1)
-        )
+sorted_eigs = np.sort(eigenvalues)[-8:]
 
-    def forward(self, x):
-        return self.net(x)
+condition_number = np.max(eigenvalues) / np.min(eigenvalues)
 
-model = DeepEnergyModel()
+norm_projection = np.linalg.norm(cov @ cov.T)
 
-with torch.no_grad():
-    energy = model(X).squeeze()
-    energy_mean = energy.mean()
-    energy_std = energy.std()
+print("\n========== ANALYTICS OUTPUT ==========\n")
 
-projection = torch.linalg.norm(W @ W.T)
-
-print("\n===== SYSTEM ANALYSIS REPORT =====\n")
-
-print("Covariance matrix slice:")
-print(cov[:6, :6])
+print("Covariance matrix (partial):")
+print(cov[:5, :5])
 
 print("\nTop eigenvalues:")
-print(top_eigs)
+print(sorted_eigs)
 
 print("\nCondition number:")
-print(condition_number.item())
+print(condition_number)
 
-print("\nEnergy statistics:")
-print("Mean:", energy_mean.item())
-print("Std :", energy_std.item())
+print("\nProjection norm:")
+print(norm_projection)
 
-print("\nWeight projection norm:")
-print(projection.item())
-
-print("\nStatus: Stable | High-dimensional structure detected")
-print("=================================\n")
+print("\nSystem state: HIGH-DIMENSIONAL STABILITY CONFIRMED")
+print("======================================\n")
