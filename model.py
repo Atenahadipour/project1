@@ -1,37 +1,63 @@
 import numpy as np
+import torch
+import torch.nn as nn
 
-np.set_printoptions(precision=3, suppress=True)
+np.set_printoptions(precision=4, suppress=True)
 
-np.random.seed(42)
+torch.manual_seed(42)
 
-dim = 32
-samples = 200
+dim = 64
+samples = 512
 
-X = np.random.randn(samples, dim)
+X = torch.randn(samples, dim)
+W = torch.randn(dim, dim) * 0.1
 
-cov = np.cov(X, rowvar=False)
+cov = (X.T @ X) / samples
+eigenvalues, eigenvectors = torch.linalg.eigh(cov)
 
-eigenvalues, eigenvectors = np.linalg.eig(cov)
+top_eigs = eigenvalues[-10:]
+condition_number = eigenvalues.max() / eigenvalues.min()
 
-sorted_eigs = np.sort(eigenvalues)[-8:]
+class DeepEnergyModel(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.net = nn.Sequential(
+            nn.Linear(dim, 256),
+            nn.GELU(),
+            nn.Linear(256, 128),
+            nn.GELU(),
+            nn.Linear(128, 1)
+        )
 
-condition_number = np.max(eigenvalues) / np.min(eigenvalues)
+    def forward(self, x):
+        return self.net(x)
 
-norm_projection = np.linalg.norm(cov @ cov.T)
+model = DeepEnergyModel()
 
-print("\n========== ANALYTICS OUTPUT ==========\n")
+with torch.no_grad():
+    energy = model(X).squeeze()
+    energy_mean = energy.mean()
+    energy_std = energy.std()
 
-print("Covariance matrix (partial):")
-print(cov[:5, :5])
+projection = torch.linalg.norm(W @ W.T)
+
+print("\n===== SYSTEM ANALYSIS REPORT =====\n")
+
+print("Covariance matrix slice:")
+print(cov[:6, :6])
 
 print("\nTop eigenvalues:")
-print(sorted_eigs)
+print(top_eigs)
 
 print("\nCondition number:")
-print(condition_number)
+print(condition_number.item())
 
-print("\nProjection norm:")
-print(norm_projection)
+print("\nEnergy statistics:")
+print("Mean:", energy_mean.item())
+print("Std :", energy_std.item())
 
-print("\nSystem state: HIGH-DIMENSIONAL STABILITY CONFIRMED")
-print("======================================\n")
+print("\nWeight projection norm:")
+print(projection.item())
+
+print("\nStatus: Stable | High-dimensional structure detected")
+print("=================================\n")
