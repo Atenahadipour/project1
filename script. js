@@ -1,6 +1,15 @@
-Traceback (most recent call last):
-  File "/home/ariyana-soft/Desktop/test/p.py", line 9, in <module>
-    c = colorama.hsv_to_rgb(h, 1, 1)
-        ^^^^^^^^^^^^^^^^^^^
-AttributeError: module 'colorama' has no attribute 'hsv_to_rgb'
-               
+import turtle 
+import colorsys
+t = turtle.Turtle()
+t.speed(0)
+turtle.bgcolor("black")
+n = 36
+h = 0
+for i in range(360):
+r , g , b = colorsys.hls_to_rgb(h, 1, 1)
+t.pencolor(int(r*255), int(g*255),int(b*255))
+h += 1/n
+t.forward(i * 2)
+t.left(59)
+turtle.colormode(255)
+turtle.down()
