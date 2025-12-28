@@ -1,7 +1,5 @@
- 5 files changed, 124 insertions(+)
- create mode 100644 __pycache__/index.html
- create mode 100644 __pycache__/numpy.cpython-312.pyc
- create mode 100644 __pycache__/styles.css
- create mode 100644 __pycache__/v.gitignore
- create mode 100644 script.js
-                        
+rm '__pycache__/index.html'
+rm '__pycache__/numpy.cpython-312.pyc'
+rm '__pycache__/styles.css'
+rm '__pycache__/v.gitignore'
+                            
