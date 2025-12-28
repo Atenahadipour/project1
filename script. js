@@ -1,14 +1,1 @@
-form.addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    console.log({
-        username: username.value,
-        fullName: fullName.value,
-        email: email.value,
-        password: "*******"
-    });
-
-    alert("Registration successful!");
-    form.reset();
-    submitBtn.disabled = true;
-});
+git commit -m "Initial commit: complete registration form"
