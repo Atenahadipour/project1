@@ -1,8 +1,457 @@
-git add index.html
-git add -f css/
-git add -f assets/
+بزرگترین کلمه
+function findLongestWord(sentence) {
+  let words = sentence.split(" ");
+  let longest = "";
 
-git commit -m "Add remaining project files"
-fatal: pathspec 'index.html' did not match any files
-fatal: pathspec 'css/' did not match any files
-                                        
+  for (let i = 0; i < words.length; i++) {
+    if (words[i].length > longest.length) {
+      longest = words[i];
+    }
+  }
+
+  return longest;
+}
+تکرار کلمات 
+
+function countFruits(fruits) {
+  let result = {};
+
+  for (let i = 0; i < fruits.length; i++) {
+    let fruit = fruits[i];
+
+    if (result[fruit]) {
+      result[fruit] += 1;
+    } else {
+      result[fruit] = 1;
+    }
+  }
+
+  return result;
+}
+
+کتابخانه
+
+class LibraryBook {
+  constructor(title, author) {
+    this.title = title;
+    this.author = author;
+    this.isAvailable = true;
+  }
+}
+مستطیلی 
+
+class Rectangle {
+  constructor(length, width) {
+    this.length = length;
+    this.width = width;
+  }
+
+  getArea() {
+    return this.length * this.width;
+  }
+
+  getPerimeter() {
+    return 2 * (this.length + this.width);
+  }
+}
+کارمند
+
+class Employee {
+  constructor(name, salary) {
+    this.name = name;
+    this.salary = salary;
+  }
+
+  giveRaise(percent) {
+    this.salary += this.salary * (percent / 100);
+  }
+}
+سبد خرید
+class ShoppingCart {
+  constructor() {
+    this.items = [];
+  }
+
+  addItem(price) {
+    this.items.push(price);
+  }
+
+  calculateTotal() {
+    let total = 0;
+    for (let i = 0; i < this.items.length; i++) {
+      total += this.items[i];
+    }
+    return total;
+  }
+}
+
+کلاس تایمر
+class Timer {
+  constructor(seconds) {
+    this.seconds = seconds;
+  }
+
+  tick() {
+    if (this.seconds > 0) {
+      this.seconds -= 1;
+      console.log(this.seconds);
+    } else {
+      console.log("Time's up!");
+    }
+  }
+}
+
+تغییر دهنده تم
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toggle Dark Mode</title>
+  <style>
+    body.mode-dark {
+      background-color: black;
+      color: white;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="toggleMode">تغییر تم</button>
+
+  <script>
+    const button = document.getElementById("toggleMode");
+
+    button.addEventListener("click", function() {
+      document.body.classList.toggle("mode-dark");
+    });
+  </script>
+
+</body>
+</html>
+
+رمز
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>اعتبارسنجی رمز عبور</title>
+  <style>
+    .error {
+      color: red;
+      margin-top: 5px;
+      display: none;
+    }
+    input {
+      display: block;
+      margin: 10px 0;
+      padding: 5px;
+    }
+    button {
+      padding: 5px 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <input type="password" id="password" placeholder="رمز عبور">
+  <input type="password" id="confirmPassword" placeholder="تکرار رمز عبور">
+  <button id="registerBtn">ثبت</button>
+  <div id="errorMsg" class="error">رمزها با هم مطابقت ندارند</div>
+
+  <script>
+    const password = document.getElementById("password");
+    const confirmPassword = document.getElementById("confirmPassword");
+    const registerBtn = document.getElementById("registerBtn");
+    const errorMsg = document.getElementById("errorMsg");
+
+    registerBtn.addEventListener("click", function() {
+      if (password.value !== confirmPassword.value) {
+        errorMsg.style.display = "block";
+      } else {
+        errorMsg.style.display = "none";
+        alert("ثبت نام موفق!");
+      }
+    });
+  </script>
+
+</body>
+</html>
+
+سبد خرید پویا
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لیست خرید پویا</title>
+  <style>
+    input {
+      padding: 5px;
+      margin: 10px 0;
+    }
+    button {
+      padding: 5px 10px;
+      margin-left: 5px;
+    }
+    li {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <input type="text" id="itemInput" placeholder="نام کالا">
+  <button id="addBtn">افزودن</button>
+
+  <ul id="shoppingList"></ul>
+
+  <script>
+    const input = document.getElementById("itemInput");
+    const addBtn = document.getElementById("addBtn");
+    const list = document.getElementById("shoppingList");
+
+    addBtn.addEventListener("click", function() {
+      const itemName = input.value.trim();
+      if (itemName === "") return;
+
+      const li = document.createElement("li");
+      li.textContent = itemName;
+
+      // دکمه حذف
+      const removeBtn = document.createElement("button");
+      removeBtn.textContent = "حذف";
+      removeBtn.addEventListener("click", function() {
+        list.removeChild(li);
+      });
+
+      li.appendChild(removeBtn);
+      list.appendChild(li);
+
+      input.value = ""; // پاک کردن اینپوت بعد از افزودن
+    });
+  </script>
+
+</body>
+</html>
+ماشین حساب
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ماشین حساب جمع</title>
+  <style>
+    input {
+      margin: 5px;
+      padding: 5px;
+      width: 80px;
+    }
+    button {
+      padding: 5px 10px;
+    }
+    #result {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <input type="number" id="num1" placeholder="عدد اول">
+  <input type="number" id="num2" placeholder="عدد دوم">
+  <button id="calcBtn">محاسبه</button>
+
+  <div>نتیجه: <span id="result">0</span></div>
+
+  <script>
+    const num1 = document.getElementById("num1");
+    const num2 = document.getElementById("num2");
+    const calcBtn = document.getElementById("calcBtn");
+    const result = document.getElementById("result");
+
+    calcBtn.addEventListener("click", function() {
+      const sum = Number(num1.value) + Number(num2.value);
+      result.textContent = sum;
+    });
+  </script>
+
+</body>
+</html>
+
+مخفی کردن متن
+
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accordion ساده</title>
+  <style>
+    h3 {
+      cursor: pointer;
+      user-select: none;
+      background-color: #f0f0f0;
+      padding: 10px;
+    }
+    p {
+      display: none; /* ابتدا مخفی */
+      padding: 10px;
+      margin: 0;
+      background-color: #e0e0e0;
+    }
+  </style>
+</head>
+<body>
+
+  <h3 id="title">عنوان متن</h3>
+  <p id="content">این یک پاراگراف نمونه است که با کلیک روی عنوان نمایش داده یا مخفی می‌شود.</p>
+
+  <script>
+    const title = document.getElementById("title");
+    const content = document.getElementById("content");
+
+    title.addEventListener("click", function() {
+      if (content.style.display === "none" || content.style.display === "") {
+        content.style.display = "block";
+      } else {
+        content.style.display = "none";
+      }
+    });
+  </script>
+
+</body>
+</html>
+
+گالری
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>گالری رنگ ساده</title>
+</head>
+<body>
+
+  <button id="redBtn">قرمز</button>
+  <button id="blueBtn">آبی</button>
+  <button id="greenBtn">سبز</button>
+
+  <div id="colorBox">باکس رنگ</div>
+
+  <script>
+    const colorBox = document.getElementById("colorBox");
+
+    document.getElementById("redBtn").addEventListener("click", function() {
+      colorBox.style.backgroundColor = "red";
+    });
+
+    document.getElementById("blueBtn").addEventListener("click", function() {
+      colorBox.style.backgroundColor = "blue";
+    });
+
+    document.getElementById("greenBtn").addEventListener("click", function() {
+      colorBox.style.backgroundColor = "green";
+    });
+  </script>
+
+</body>
+</html>
+شمارنده کاراکتر
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>شمارنده کاراکتر</title>
+</head>
+<body>
+
+  <textarea id="textArea" rows="5" cols="40" placeholder="متن خود را اینجا وارد کنید..."></textarea>
+  <div id="charCount">0 کاراکتر</div>
+
+  <script>
+    const textArea = document.getElementById("textArea");
+    const charCount = document.getElementById("charCount");
+
+    textArea.addEventListener("input", function() {
+      const count = textArea.value.length;
+      charCount.textContent = count + " کاراکتر";
+    });
+  </script>
+
+</body>
+</html>
+فیلتر کردن اسامی
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>فیلتر لیست اسامی</title>
+</head>
+<body>
+
+  <input type="text" id="searchInput" placeholder="جستجو...">
+
+  <ul id="nameList">
+    <li>علی</li>
+    <li>محمد</li>
+    <li>سارا</li>
+    <li>نرگس</li>
+    <li>رضا</li>
+  </ul>
+
+  <script>
+    const searchInput = document.getElementById("searchInput");
+    const nameList = document.getElementById("nameList");
+    const items = nameList.getElementsByTagName("li");
+
+    searchInput.addEventListener("input", function() {
+      const filter = searchInput.value.toLowerCase();
+
+      for (let i = 0; i < items.length; i++) {
+        const text = items[i].textContent.toLowerCase();
+        if (text.includes(filter)) {
+          items[i].style.display = "list-item";
+        } else {
+          items[i].style.display = "none";
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
+دکمه لایک
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>دکمه الیک</title>
+</head>
+<body>
+
+  <button id="likeBtn">الیک: 0</button>
+
+  <script>
+    const likeBtn = document.getElementById("likeBtn");
+    let count = 0;
+
+    likeBtn.addEventListener("click", function() {
+      count++;
+      likeBtn.textContent = "الیک: " + count;
+    });
+  </script>
+
+</body>
+</html>
+
