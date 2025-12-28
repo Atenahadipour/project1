@@ -1,1 +1,5 @@
-git commit -m "Remove __pycache__ from Git"
+ git remot add origin https://github.com/Atenahadipour/project2.git
+git: 'remot' is not a git command. See 'git --help'.
+
+The most similar command is
+        remote
