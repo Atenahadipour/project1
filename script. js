@@ -1,14 +1,14 @@
-form.addEventListener('submit',function(e)) {
-    e.preventdefault();
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
     console.log({
-        username:username.valiu,
-        fullName:fullName.valiu,
-        email:email.valiu,
-        password:"*******"
-
+        username: username.value,
+        fullName: fullName.value,
+        email: email.value,
+        password: "*******"
     });
- alert("successfull");
- form.reset();
- submitbtn.disabled = true;
-};
 
+    alert("Registration successful!");
+    form.reset();
+    submitBtn.disabled = true;
+});
