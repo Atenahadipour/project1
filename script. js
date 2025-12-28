@@ -1,2 +1,8 @@
-git config --global user.name "Atena Hadipour"
-git config --global user.email "your-email@example.com"
+git add index.html
+git add -f css/
+git add -f js/script.js
+git add -f assets/
+
+
+
+git commit -m "Initial commit: add project files"
