@@ -1,5 +1,1 @@
-rm '__pycache__/index.html'
-rm '__pycache__/numpy.cpython-312.pyc'
-rm '__pycache__/styles.css'
-rm '__pycache__/v.gitignore'
-                            
+git commit -m "Remove __pycache__ from Git"
