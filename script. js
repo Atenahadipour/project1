@@ -1,22 +1,14 @@
-import turtle
-import colorsys
-import time  # 🟢 اضافه کردن زمان
+form.addEventListener('submit',function(e)) {
+    e.preventdefault();
+    console.log({
+        username:username.valiu,
+        fullName:fullName.valiu,
+        email:email.valiu,
+        password:"*******"
 
-turtle.colormode(255)
+    });
+ alert("successfull");
+ form.reset();
+ submitbtn.disabled = true;
+};
 
-t = turtle.Turtle()
-t.speed(0)
-turtle.bgcolor("black")
-
-n = 36
-h = 0
-
-for i in range(360):
-    r, g, b = colorsys.hsv_to_rgb(h, 1, 1)
-    t.pencolor(int(r*255), int(g*255), int(b*255))
-    h += 1/n
-    t.forward(i * 2)
-    t.left(59)
-    time.sleep(0.01)  # 🟢 اضافه کردن وقفه کوچک
-
-turtle.done()
