@@ -6,3 +6,10 @@ git add -f assets/
 
 
 git commit -m "Initial commit: add project files"
+
+fatal: pathspec 'index.html' did not match any files
+fatal: pathspec 'css/' did not match any files
+fatal: pathspec 'js/script.js' did not match any files
+             
+
+
