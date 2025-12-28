@@ -1,5 +1,5 @@
- git remot add origin https://github.com/Atenahadipour/project2.git
-git: 'remot' is not a git command. See 'git --help'.
+git add index.html
+git add -f css/
+git add -f assets/
 
-The most similar command is
-        remote
+git commit -m "Add remaining project files"
