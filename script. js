@@ -1,3 +1,6 @@
-error: src refspec main does not match any
-error: failed to push some refs to 'https://github.com/Atenahadipour/project2'
-                     
+      
+(use "git rm --cached <file>..." to unstage)
+        new file:   __pycache__/index.html
+        new file:   __pycache__/numpy.cpython-312.pyc
+        new file:   __pycache__/styles.css
+        new file:   script.js
