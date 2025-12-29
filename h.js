@@ -1,1 +1,2 @@
-git commit -m "Initial commit – Add HTML, CSS, JS files"
+git branch -M main
+git push -u origin main
