@@ -1,61 +1,124 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>User Registration Form</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+}
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
+/* Body */
+body {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #e5e7eb;
+}
 
-    <div class="container">
-        <form id="registrationForm" novalidate>
+/* Container */
+.container {
+    background: linear-gradient(145deg, #0f172a, #111827);
+    padding: 40px 50px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+    transition: transform 0.3s ease;
+}
 
-            <h1>User Registration</h1>
+.container:hover {
+    transform: translateY(-5px);
+}
 
-            <!-- Username -->
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username">
-                <small class="error-message"></small>
-            </div>
+/* Form title */
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #38bdf8;
+    letter-spacing: 1px;
+    font-size: 28px;
+}
 
-            <!-- Full Name -->
-            <div class="form-group">
-                <label for="fullName">Full Name</label>
-                <input type="text" id="fullName" name="fullName">
-                <small class="error-message"></small>
-            </div>
+/* Form group */
+.form-group {
+    margin-bottom: 20px;
+}
 
-            <!-- Email -->
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email">
-                <small class="error-message"></small>
-            </div>
+/* Labels */
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
 
-            <!-- Password -->
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password">
-                <small class="error-message"></small>
-            </div>
+/* Inputs */
+input {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: 1px solid #1e293b;
+    background: #111827;
+    color: #e5e7eb;
+    outline: none;
+    font-size: 15px;
+    transition: 0.3s;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.3);
+}
 
-            <!-- Submit Button -->
-            <button type="submit" id="submitBtn" disabled>
-                Register
-            </button>
+input:focus {
+    border-color: #38bdf8;
+    box-shadow: 0 0 8px rgba(56,189,248,0.5);
+}
 
-            <!-- Success Message -->
-            <p class="success-message" id="successMessage"></p>
+/* Error messages */
+.error-message {
+    color: #f87171;
+    font-size: 13px;
+    margin-top: 5px;
+    min-height: 18px;
+}
 
-        </form>
-    </div>
+/* Success message */
+.success-message {
+    color: #4ade80;
+    text-align: center;
+    margin-top: 15px;
+    font-weight: bold;
+}
 
-    <!-- JavaScript -->
-    <script src="js/script.js"></script>
+/* Button */
+button {
+    width: 100%;
+    padding: 14px;
+    border-radius: 14px;
+    border: none;
+    background: linear-gradient(135deg, #38bdf8, #2563eb);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+    box-shadow: 0 8px 20px rgba(56,189,248,0.4);
+}
 
-</body>
-</html>
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(56,189,248,0.5);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .container {
+        padding: 30px 25px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+}
