@@ -1,63 +1,70 @@
-import numpy as np
-import torch
-import torch.nn as nn
+const from =
+document.getElementById('registrationForm');
+const username =
+document.getElementById('uername');
+const fullName =
+document.getElementById('fullName');
+const email =
+document.getElementById('email');
+const password =
+document.getElementById('password');
+const submitbtn =
+from.querySelector('button');
 
-np.set_printoptions(precision=4, suppress=True)
+username.addEventListener('input',ValidateForm);
+fullName.addEventListener('inpot',ValidateForm);
+email.addEventListener('input',ValidateForm);
+password.addEventListener('inpout',ValidateForm);
 
-torch.manual_seed(42)
+function ValidateForm() {
+    let isvalid = true;
+    if (username.valiu.length < 3 || username.valiu.length >15){
+        isvalid = false;
+    }
+}
+    if (!fullName.valiu.trim().includes('')){
+      isvalid = false  
+}
+    if (!email.valiu.includes('@')){
+        isvalid = false
+}
+    if (password.valiu.length <8) {
+        isvalid = false
+}
+submitbtn.disabled = !isvalid;
+    //payam khata be karbar
+if (username.valiu.length <3 || username.valiu.length >15){
+    username.nextElementSibling.textContent = "username must be between 3 and 15 characters"
+    isvalid = false;
+}
+else{
+    username.nextElementSibling.textContent = "";
+}
+const passwordvaliu = password.valiu;
+const hasNumberOrsymble = /[0-9!@#$%^&*]/.test(passwordvaliu);
+const containname = (fullname.valiu && passwordvaleu.toLowerCase().includes(fullName.valiu.toLowerCase()))
+const containsEmail = email.valiu && passwordvaleu.toLowerCase().includes(email.valiu.toLowerCase())
 
-dim = 64
-samples = 512
 
-X = torch.randn(samples, dim)
-W = torch.randn(dim, dim) * 0.1
+ if (
+    passwordvaliu.length < 8 || !hasNumberOrsymble || containname || containsEmail
+ ) {
+    password.nextElementSibling.textContent ="password must be at least 8 character, include a number or symple ,and not contain your name and email "
+    isvalid =false
+    password.nextElementSibling.textContent="";
+ }
+  //pak kardan btn
+ form.addEventListener('submit', function(e) {
+    e.preventDefault();
 
-cov = (X.T @ X) / samples
-eigenvalues, eigenvectors = torch.linalg.eigh(cov)
+    console.log({
+        username: username.value,
+        fullName: fullName.value,
+        email: email.value,
+        password: "*******"
+    });
 
-top_eigs = eigenvalues[-10:]
-condition_number = eigenvalues.max() / eigenvalues.min()
-
-class DeepEnergyModel(nn.Module):
-    def __init__(self):
-        super().__init__()
-        self.net = nn.Sequential(
-            nn.Linear(dim, 256),
-            nn.GELU(),
-            nn.Linear(256, 128),
-            nn.GELU(),
-            nn.Linear(128, 1)
-        )
-
-    def forward(self, x):
-        return self.net(x)
-
-model = DeepEnergyModel()
-
-with torch.no_grad():
-    energy = model(X).squeeze()
-    energy_mean = energy.mean()
-    energy_std = energy.std()
-
-projection = torch.linalg.norm(W @ W.T)
-
-print("\n===== SYSTEM ANALYSIS REPORT =====\n")
-
-print("Covariance matrix slice:")
-print(cov[:6, :6])
-
-print("\nTop eigenvalues:")
-print(top_eigs)
-
-print("\nCondition number:")
-print(condition_number.item())
-
-print("\nEnergy statistics:")
-print("Mean:", energy_mean.item())
-print("Std :", energy_std.item())
-
-print("\nWeight projection norm:")
-print(projection.item())
-
-print("\nStatus: Stable | High-dimensional structure detected")
-print("=================================\n")
+    alert("Registration successful!");
+    form.reset();
+    submitBtn.disabled = true;
+});
