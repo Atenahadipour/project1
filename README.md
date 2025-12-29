@@ -1,29 +1,70 @@
-Dec 17 04:54:17 kali Tor[4117]: Parsing GEOIP IPv4 file /usr/share/tor/geoip.
-Dec 17 04:54:17 kali Tor[4117]: Parsing GEOIP IPv6 file /usr/share/tor/geoip6.
-Dec 17 04:54:17 kali Tor[4117]: Bootstrapped 0% (starting): Starting
-Dec 17 04:54:17 kali Tor[4117]: Starting with guard context "bridges"
-Dec 17 04:54:17 kali Tor[4117]: Delaying directory fetches: No running bridges
-Dec 17 04:54:17 kali Tor[4117]: Signaled readiness to systemd
-Dec 17 04:54:17 kali systemd[1]: Started tor@default.service - Anonymizing overlay network for TCP.
-Dec 17 04:54:18 kali Tor[4117]: Opening Socks listener on /run/tor/socks
-Dec 17 04:54:18 kali Tor[4117]: Opened Socks listener connection (ready) on /run/tor/socks
-Dec 17 04:54:18 kali Tor[4117]: Opening Control listener on /run/tor/control
-Dec 17 04:54:18 kali Tor[4117]: Opened Control listener connection (ready) on /run/tor/control
-Dec 17 04:54:18 kali Tor[4117]: Bootstrapped 1% (conn_pt): Connecting to pluggable transport
-Dec 17 04:54:18 kali Tor[4117]: Bootstrapped 2% (conn_done_pt): Connected to pluggable transport
-Dec 17 04:54:18 kali Tor[4117]: Managed proxy "/usr/bin/snowflake-client" process terminated with status code 256
-Dec 17 04:54:19 kali Tor[4117]: Managed proxy "/usr/bin/snowflake-client" process terminated with status code 256
-Dec 17 04:54:21 kali Tor[4117]: Managed proxy "/usr/bin/snowflake-client" process terminated with status code 256
-Dec 17 04:54:24 kali Tor[4117]: Managed proxy "/usr/bin/snowflake-client" process terminated with status code 256
-Dec 17 04:54:27 kali Tor[4117]: Managed proxy "/usr/bin/snowflake-client" process terminated with status code 256
-Dec 17 04:54:35 kali Tor[4117]: Managed proxy "/usr/bin/snowflake-client" process terminated with status code 256
-Dec 17 04:54:57 kali Tor[4117]: Managed proxy "/usr/bin/snowflake-client" process terminated with status code 256
-Dec 17 04:55:11 kali Tor[4117]: Managed proxy "/usr/bin/snowflake-client" process terminated with status code 256
-Dec 17 04:55:32 kali Tor[4117]: Managed proxy "/usr/bin/snowflake-client" process terminated with status code 256
-Dec 17 04:55:42 kali Tor[4117]: Managed proxy "/usr/bin/snowflake-client" process terminated with status code 256
-Dec 17 04:56:09 kali Tor[4117]: Managed proxy "/usr/bin/snowflake-client" process terminated with status code 256
-Dec 17 04:56:26 kali Tor[4117]: Managed proxy "/usr/bin/snowflake-client" process terminated with status code 256
-Dec 17 04:56:34 kali Tor[4117]: Managed proxy "/usr/bin/snowflake-client" process terminated with status code 256
-Dec 17 04:56:40 kali Tor[4117]: Managed proxy "/usr/bin/snowflake-client" process terminated with status code 256
-Dec 17 04:56:45 kali Tor[4117]: Managed proxy "/usr/bin/snowflake-client" process terminated with status code 256
-                                       
+const from =
+document.getElementById('registrationForm');
+const username =
+document.getElementById('uername');
+const fullName =
+document.getElementById('fullName');
+const email =
+document.getElementById('email');
+const password =
+document.getElementById('password');
+const submitbtn =
+from.querySelector('button');
+
+username.addEventListener('input',ValidateForm);
+fullName.addEventListener('inpot',ValidateForm);
+email.addEventListener('input',ValidateForm);
+password.addEventListener('inpout',ValidateForm);
+
+function ValidateForm() {
+    let isvalid = true;
+    if (username.valiu.length < 3 || username.valiu.length >15){
+        isvalid = false;
+    }
+}
+    if (!fullName.valiu.trim().includes('')){
+      isvalid = false  
+}
+    if (!email.valiu.includes('@')){
+        isvalid = false
+}
+    if (password.valiu.length <8) {
+        isvalid = false
+}
+submitbtn.disabled = !isvalid;
+    //payam khata be karbar
+if (username.valiu.length <3 || username.valiu.length >15){
+    username.nextElementSibling.textContent = "username must be between 3 and 15 characters"
+    isvalid = false;
+}
+else{
+    username.nextElementSibling.textContent = "";
+}
+const passwordvaliu = password.valiu;
+const hasNumberOrsymble = /[0-9!@#$%^&*]/.test(passwordvaliu);
+const containname = (fullname.valiu && passwordvaleu.toLowerCase().includes(fullName.valiu.toLowerCase()))
+const containsEmail = email.valiu && passwordvaleu.toLowerCase().includes(email.valiu.toLowerCase())
+
+
+ if (
+    passwordvaliu.length < 8 || !hasNumberOrsymble || containname || containsEmail
+ ) {
+    password.nextElementSibling.textContent ="password must be at least 8 character, include a number or symple ,and not contain your name and email "
+    isvalid =false
+    password.nextElementSibling.textContent="";
+ }
+  //pak kardan btn
+ form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    console.log({
+        username: username.value,
+        fullName: fullName.value,
+        email: email.value,
+        password: "*******"
+    });
+
+    alert("Registration successful!");
+    form.reset();
+    submitBtn.disabled = true;
+});
