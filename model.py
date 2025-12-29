@@ -1,60 +1,70 @@
-const from =
-document.getElementById('registrationForm');
-const username =
-document.getElementById('uername');
-const fullName =
-document.getElementById('fullName');
-const email =
-document.getElementById('email');
-const password =
-document.getElementById('password');
-const submitbtn =
-from.querySelector('button');
+const form = document.getElementById('registrationForm');
+const username = document.getElementById('username');
+const fullName = document.getElementById('fullName');
+const email = document.getElementById('email');
+const password = document.getElementById('password');
+const submitBtn = form.querySelector('button');
 
-username.addEventListener('input',ValidateForm);
-fullName.addEventListener('inpot',ValidateForm);
-email.addEventListener('input',ValidateForm);
-password.addEventListener('inpout',ValidateForm);
+// اضافه کردن event listener برای هر input
+username.addEventListener('input', validateForm);
+fullName.addEventListener('input', validateForm);
+email.addEventListener('input', validateForm);
+password.addEventListener('input', validateForm);
 
-function ValidateForm() {
-    let isvalid = true;
-    if (username.valiu.length < 3 || username.valiu.length >15){
-        isvalid = false;
+function validateForm() {
+    let isValid = true;
+
+    // --- Username Validation ---
+    if (username.value.length < 3 || username.value.length > 15) {
+        username.nextElementSibling.textContent = "Username must be between 3 and 15 characters";
+        isValid = false;
+    } else if (!/^[a-zA-Z0-9]+$/.test(username.value)) {
+        username.nextElementSibling.textContent = "Username can only contain letters and numbers";
+        isValid = false;
+    } else {
+        username.nextElementSibling.textContent = "";
     }
-}
-    if (!fullName.valiu.trim().includes('')){
-      isvalid = false  
-}
-    if (!email.valiu.includes('@')){
-        isvalid = false
-}
-    if (password.valiu.length <8) {
-        isvalid = false
-}
-submitbtn.disabled = !isvalid;
-    //payam khata be karbar
-if (username.valiu.length <3 || username.valiu.length >15){
-    username.nextElementSibling.textContent = "username must be between 3 and 15 characters"
-    isvalid = false;
-}
-else{
-    username.nextElementSibling.textContent = "";
-}
-const passwordvaliu = password.valiu;
-const hasNumberOrsymble = /[0-9!@#$%^&*]/.test(passwordvaliu);
-const containname = (fullname.valiu && passwordvaleu.toLowerCase().includes(fullName.valiu.toLowerCase()))
-const containsEmail = email.valiu && passwordvaleu.toLowerCase().includes(email.valiu.toLowerCase())
 
+    // --- Full Name Validation ---
+    if (!/^[a-zA-Z]+\s[a-zA-Z]+/.test(fullName.value.trim())) {
+        fullName.nextElementSibling.textContent = "Please enter your full name (first and last name)";
+        isValid = false;
+    } else {
+        fullName.nextElementSibling.textContent = "";
+    }
 
- if (
-    passwordvaliu.length < 8 || !hasNumberOrsymble || containname || containsEmail
- ) {
-    password.nextElementSibling.textContent ="password must be at least 8 character, include a number or symple ,and not contain your name and email "
-    isvalid =false
-    password.nextElementSibling.textContent="";
- }
-  //pak kardan btn
- form.addEventListener('submit', function(e) {
+    // --- Email Validation ---
+    if (!/^\S+@\S+\.\S+$/.test(email.value)) {
+        email.nextElementSibling.textContent = "Please enter a valid email address";
+        isValid = false;
+    } else {
+        email.nextElementSibling.textContent = "";
+    }
+
+    // --- Password Validation ---
+    const passwordValue = password.value;
+    const hasNumberOrSymbol = /[0-9!@#$%^&*]/.test(passwordValue);
+    const containsName = fullName.value && passwordValue.toLowerCase().includes(fullName.value.toLowerCase());
+    const containsEmail = email.value && passwordValue.toLowerCase().includes(email.value.toLowerCase());
+
+    if (
+        passwordValue.length < 8 ||
+        !hasNumberOrSymbol ||
+        containsName ||
+        containsEmail
+    ) {
+        password.nextElementSibling.textContent = "Password must be at least 8 characters, include a number or symbol, and not contain your name or email";
+        isValid = false;
+    } else {
+        password.nextElementSibling.textContent = "";
+    }
+
+    // فعال/غیرفعال کردن دکمه submit
+    submitBtn.disabled = !isValid;
+}
+
+// --- Form Submission ---
+form.addEventListener('submit', function(e) {
     e.preventDefault();
 
     console.log({
