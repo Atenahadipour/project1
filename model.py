@@ -5,7 +5,7 @@ const email = document.getElementById('email');
 const password = document.getElementById('password');
 const submitBtn = form.querySelector('button');
 
-// اضافه کردن event listener برای هر input
+// live validation on input
 username.addEventListener('input', validateForm);
 fullName.addEventListener('input', validateForm);
 email.addEventListener('input', validateForm);
@@ -14,7 +14,7 @@ password.addEventListener('input', validateForm);
 function validateForm() {
     let isValid = true;
 
-    // --- Username Validation ---
+    // Username check
     if (username.value.length < 3 || username.value.length > 15) {
         username.nextElementSibling.textContent = "Username must be between 3 and 15 characters";
         isValid = false;
@@ -25,15 +25,15 @@ function validateForm() {
         username.nextElementSibling.textContent = "";
     }
 
-    // --- Full Name Validation ---
-    if (!/^[a-zA-Z]+\s[a-zA-Z]+/.test(fullName.value.trim())) {
-        fullName.nextElementSibling.textContent = "Please enter your full name (first and last name)";
+    // Full name check
+    if (!/^[a-zA-Z]+\s[a-zA-Z]+$/.test(fullName.value.trim())) {
+        fullName.nextElementSibling.textContent = "Please enter your full name (first and last)";
         isValid = false;
     } else {
         fullName.nextElementSibling.textContent = "";
     }
 
-    // --- Email Validation ---
+    // Email check
     if (!/^\S+@\S+\.\S+$/.test(email.value)) {
         email.nextElementSibling.textContent = "Please enter a valid email address";
         isValid = false;
@@ -41,39 +41,32 @@ function validateForm() {
         email.nextElementSibling.textContent = "";
     }
 
-    // --- Password Validation ---
+    // Password check
     const passwordValue = password.value;
     const hasNumberOrSymbol = /[0-9!@#$%^&*]/.test(passwordValue);
     const containsName = fullName.value && passwordValue.toLowerCase().includes(fullName.value.toLowerCase());
     const containsEmail = email.value && passwordValue.toLowerCase().includes(email.value.toLowerCase());
 
-    if (
-        passwordValue.length < 8 ||
-        !hasNumberOrSymbol ||
-        containsName ||
-        containsEmail
-    ) {
+    if (passwordValue.length < 8 || !hasNumberOrSymbol || containsName || containsEmail) {
         password.nextElementSibling.textContent = "Password must be at least 8 characters, include a number or symbol, and not contain your name or email";
         isValid = false;
     } else {
         password.nextElementSibling.textContent = "";
     }
 
-    // فعال/غیرفعال کردن دکمه submit
+    // enable/disable submit button
     submitBtn.disabled = !isValid;
 }
 
-// --- Form Submission ---
+// form submission
 form.addEventListener('submit', function(e) {
     e.preventDefault();
-
     console.log({
         username: username.value,
         fullName: fullName.value,
         email: email.value,
         password: "*******"
     });
-
     alert("Registration successful!");
     form.reset();
     submitBtn.disabled = true;
