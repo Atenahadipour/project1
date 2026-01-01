@@ -1,9 +1,18 @@
-git push -u origin main                         
-To https://github.com/Atenahadipour/project2
- ! [rejected]        main -> main (non-fast-forward)
-error: failed to push some refs to 'https://github.com/Atenahadipour/project2'
-hint: Updates were rejected because the tip of your current branch is behind
-hint: its remote counterpart. If you want to integrate the remote changes,
-hint: use 'git pull' before pushing again.
-hint: See the 'Note about fast-forwards' in 'git push --help' for details.
-                                        
+x = float(input("Number1 :"))
+y = float(input("Number2 :"))
+z = float(input("operator :"))
+
+if z=="+" :
+    print(x+y)
+elif z=="-" :
+    print(x-y)
+elif z=="%" :
+    print(x/y)
+elif z=="*" :
+    print(x*y)
+    if y!=0 :
+      print(x/y)
+    else:
+        print("/0 is not exist")
+else :
+    print("operator is not exist")
