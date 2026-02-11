@@ -3,36 +3,36 @@ class BankAccount:
         self.owner = owner
         self.balance = balance
 
-    # عملیات واریز وجه
+    # Variz Pool (Deposit)
     def deposit(self, amount):
         if amount > 0:
             self.balance += amount
-            print(f"مبلغ {amount} تومان با موفقیت واریز شد.")
+            print("Mablaghe " + str(amount) + " ba movafaghiat variz shod.")
         else:
-            print("مبلغ واریزی باید بیشتر از صفر باشد.")
+            print("Mablagh bayad bishtar az 0 bashad.")
 
-    # عملیات برداشت وجه
+    # Bardasht Pool (Withdraw)
     def withdraw(self, amount):
         if amount > self.balance:
-            print("خطا: موجودی کافی نیست!")
+            print("Khata: Mojoodi kafi nist!")
         elif amount <= 0:
-            print("مبلغ برداشت باید بیشتر از صفر باشد.")
+            print("Mablagh bayad bishtar az 0 bashad.")
         else:
             self.balance -= amount
-            print(f"مبلغ {amount} تومان از حساب برداشت شد.")
+            print("Mablaghe " + str(amount) + " az hesab bardasht shod.")
 
-    # نمایش موجودی
+    # Namayeshe Mojoodi (Balance)
     def display_balance(self):
-        print(f"موجودی فعلی حساب {self.owner}: {self.balance} تومان")
+        print("Mojoodie hesabe " + self.owner + ": " + str(self.balance) + " Toman")
 
 
-# --- تست برنامه ---
+# --- Test Barname ---
 
-# ایجاد یک حساب جدید برای علی با موجودی اولیه 1000
-account1 = BankAccount("علی", 1000)
+# Sakhte hesab baraye Ali ba 1000 toman mojoodi
+hesab1 = BankAccount("Ali", 1000)
 
-account1.display_balance()  # نمایش موجودی
-account1.deposit(500)       # واریز 500 تومان
-account1.withdraw(200)      # برداشت 200 تومان
-account1.withdraw(2000)     # تست برداشت بیش از موجودی (ایجاد خطا)
-account1.display_balance()  # نمایش موجودی نهایی
+hesab1.display_balance()
+hesab1.deposit(500)
+hesab1.withdraw(200)
+hesab1.withdraw(2000) # In yeki khata midahad chon mojoodi kam ast
+hesab1.display_balance()
